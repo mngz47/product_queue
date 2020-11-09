@@ -7,7 +7,7 @@
 
 include str_replace('\\','/',$_SERVER['DOCUMENT_ROOT']).'/api.php';
 
-$sql = 'SELECT COUNT(id) AS ii FROM queue WHERE product_id='.$product_id;
+$sql = 'SELECT COUNT(id) AS ii FROM queue WHERE product_id='.$_GET['product_id'];
 $result = $conn->query($sql);
 	       if($result){
 			   $q_row = $result->fetch_assoc();
@@ -31,7 +31,7 @@ $result = $conn->query($sql);
 				   
 				   //message reminder to people in queue (size of queue,price drop)
 				   $msg = 'Queue for <a href="https://www.productlists.co.za/services/sell/products/open.php?product_id='.$q_row2['id'].'" >'.
-				   $q_row2['title'].'</a> now has '.$q_row['ii'].' people and price has dropped to R'.$q_discount+'.<br>'.
+				   $q_row2['title'].'</a> now has '.$q_row['ii'].' people and price has dropped to R'.$q_discount.'.<br>'.
 				   ($q_row['ii']%100>7?' Add item to cart and checkout to access discount price':'');
 
 			  } 
@@ -45,7 +45,7 @@ $result = $conn->query($sql);
 	       if($result){
 			   while($q_row2 = $result->fetch_assoc()){
 				
-           $sql = 'SELECT email_cell FROM queue WHERE product_id='.$product_id;
+           $sql = 'SELECT email_cell FROM customer WHERE id='.$q_row2['member_id'];
 $result2 = $conn->query($sql);
 	       if($result2){
 			   if($q_row3 = $result2->fetch_assoc()){
