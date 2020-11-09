@@ -31,7 +31,7 @@ $result = $conn->query($sql);
 				   
 				   //message reminder to people in queue (size of queue,price drop)
 				   $msg = 'Queue for <a href="https://www.productlists.co.za/services/sell/products/open.php?product_id='.$q_row2['id'].'" >'.
-				   $q_row2['title'].'</a> now has '.$q_row['ii'].' people and price has dropped to R'.$q_discount+'.<br>'+
+				   $q_row2['title'].'</a> now has '.$q_row['ii'].' people and price has dropped to R'.$q_discount+'.<br>'.
 				   ($q_row['ii']%100>7?' Add item to cart and checkout to access discount price':'');
 
 			  } 
