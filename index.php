@@ -5,6 +5,9 @@
 //session_start();
 
 $conn = new mysqli('localhost','produc10_mng','mngzpass636','produc10_productlists');
+
+echo '--<br>';
+
 include str_replace('\\','/',$_SERVER['DOCUMENT_ROOT']).'/api.php';
 
 $sql = 'SELECT COUNT(id) AS ii FROM queue WHERE product_id='.$_GET['product_id'];
