@@ -8,7 +8,7 @@ $conn = new mysqli('localhost','produc10_mng','mngzpass636','produc10_productlis
 
 echo '--<br>';
 
-include str_replace('\\','/',$_SERVER['DOCUMENT_ROOT']).'/api.php';
+//include str_replace('\\','/',$_SERVER['DOCUMENT_ROOT']).'/api.php';
 
 $sql = 'SELECT COUNT(id) AS ii FROM queue WHERE product_id='.$_GET['product_id'];
 $result = $conn->query($sql);
