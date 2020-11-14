@@ -1,6 +1,6 @@
 
 <p style="font-size:1.1em;" ><strong>Refer a friend to lower the price.</strong><br>
-The price will drop to R<?php  echo round($row['price']-($row['price']/3)); ?><br>
+	The price will drop to <span style="color:green;" >R<?php  echo round($row['price']-($row['price']/3)); ?></span><br>
 	After 1000 people have joined the queue.</p>
 <?php
 
@@ -16,7 +16,7 @@ $result = $conn->query($sql);
 			   
 		   if($q_row['ii']>0){
 			   
-                 $q_discount = 	$row['price'] - (($row['price']/3)*($q_row['ii']/1000));		   
+                 $q_discount = 	round($row['price'] - (($row['price']/3)*($q_row['ii']/1000)));		   
 			   
 			   echo '<span>Queue Size('.($q_row['ii']+50).')</span><br>';
 			   echo '<span>Product Discount(R'.$q_discount.')</span><br>';
