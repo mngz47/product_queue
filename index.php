@@ -9,9 +9,9 @@ include str_replace('\\','/',$_SERVER['DOCUMENT_ROOT']).'/api.php';
 
 $sql = 'SELECT COUNT(id) AS ii FROM queue WHERE product_id='.$_GET['product_id'];
 $result = $conn->query($sql);
-	       if($result){
-			   $q_row = $result->fetch_assoc();
-			   
+	       if($q_row = $result->fetch_assoc()){
+			  
+		       echo $q_row['ii'].'<br>';
 			   
 		   if($q_row['ii']>0){
 			   
