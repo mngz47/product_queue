@@ -1,13 +1,12 @@
 
 <p style="font-size:1.1em;" ><strong>Refer a friend to lower the price.</strong><br>
 The price will drop to R<?php  echo round($row['price']-($row['price']/3)); ?><br>
-	After 1000 people have joined the queue.<br></p>
+	After 1000 people have joined the queue.</p>
 <?php
 
 //session_start();
 
 $conn = new mysqli('localhost','produc10_mng','mngzpass636','produc10_productlists');
-
 
 //include str_replace('\\','/',$_SERVER['DOCUMENT_ROOT']).'/api.php';
 
@@ -19,7 +18,7 @@ $result = $conn->query($sql);
 			   
                  $q_discount = 	$row['price'] - (($row['price']/3)*($q_row['ii']/1000));		   
 			   
-			   echo '<span>Queue Size('.$q_row['ii'].')</span><br>';
+			   echo '<span>Queue Size('.($q_row['ii']+50).')</span><br>';
 			   echo '<span>Product Discount(R'.$q_discount.')</span><br>';
 			   
 			   $msg = '';
