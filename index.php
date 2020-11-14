@@ -61,8 +61,8 @@ $result2 = $conn->query($sql);
 		   }
 		   
 		   if(ISSET($_SESSION['customer_id'])){
-				   echo '<a style="font-size:1.1em;" href=# onclick="sendreq(\'feature/queue/newQueue.php?product_id='.$product_id.'\');" >Join Queue</a>';
+				   echo '<a style="font-size:1.2em;" href=# onclick="sendreq(\'feature/queue/newQueue.php?product_id='.$product_id.'\');" >Join Queue</a>';
 			   }else{
-				   echo '<p style="font-size:1.1em;" >Sign In</p>';
+				   echo '<p style="font-size:1.2em;" >Sign In</p>';
 			   }
 ?>
