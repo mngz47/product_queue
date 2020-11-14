@@ -1,27 +1,26 @@
 
-<strong>Refer a friend to lower the price.</strong><br>
+<p style="font-size:1.1em;" ><strong>Refer a friend to lower the price.</strong><br>
+The price will drop to R<?php  echo round($row['price']-($row['price']/3)); ?><br>
+	After 1000 people have joined the queue.<br></p>
 <?php
 
 //session_start();
 
 $conn = new mysqli('localhost','produc10_mng','mngzpass636','produc10_productlists');
 
-echo '--<br>';
 
 //include str_replace('\\','/',$_SERVER['DOCUMENT_ROOT']).'/api.php';
 
 $sql = 'SELECT COUNT(id) AS ii FROM queue WHERE product_id='.$_GET['product_id'];
 $result = $conn->query($sql);
 	       if($q_row = $result->fetch_assoc()){
-			  
-		       echo $q_row['ii'].'<br>';
 			   
 		   if($q_row['ii']>0){
 			   
                  $q_discount = 	$row['price'] - (($row['price']/3)*($q_row['ii']/1000));		   
 			   
 			   echo '<span>Queue Size('.$q_row['ii'].')</span><br>';
-			   echo '<span>Product Discount('.$q_discount.')</span><br>';
+			   echo '<span>Product Discount(R'.$q_discount.')</span><br>';
 			   
 			   $msg = '';
 			   
@@ -63,8 +62,8 @@ $result2 = $conn->query($sql);
 		   }
 		   
 		   if(ISSET($_SESSION['customer_id'])){
-				   echo '<a href=# onclick="sendreq(\'feature/queue/newQueue.php?product_id='.$product_id.'\');" >Join Queue</a>';
+				   echo '<a style="font-size:1.1em;" href=# onclick="sendreq(\'feature/queue/newQueue.php?product_id='.$product_id.'\');" >Join Queue</a>';
 			   }else{
-				   echo '<p>Sign In</p>';
+				   echo '<p style="font-size:1.1em;" >Sign In</p>';
 			   }
 ?>
