@@ -1,5 +1,5 @@
 
-<p style="font-size:1.1em;" ><strong>Refer a friend to lower the price.</strong><br>
+<p style="font-size:1.1em;" ><strong><a class=fshare href="https://facebook.com/sharer.php?u=https://www.productlists.co.za/services/sell/products/open.php?product_id=<?php echo $_GET['product_id']; ?>" >Refer</a> a friend to lower the price.</strong><br>
 	The price will drop to <span style="color:green;" >R<?php  echo round($row['price']-($row['price']/3)); ?></span><br>
 	After 1000 people have joined the queue.</p>
 <?php
@@ -63,6 +63,6 @@ $result2 = $conn->query($sql);
 		   if(ISSET($_SESSION['customer_id'])){
 				   echo '<a style="font-size:1.2em;" href=# onclick="sendreq(\'feature/queue/newQueue.php?product_id='.$product_id.'\');alert(\'Success\');return false;" >Join Queue</a>';
 			   }else{
-				   echo '<p style="font-size:1.2em;" >Sign In</p>';
+				  echo '<p style="font-size:1.2em;" ><a href="https://www.productlists.co.za/member/signin_main.php" >Sign In</a></p>';
 			   }
 ?>
