@@ -61,7 +61,8 @@ $result2 = $conn->query($sql);
 		   }
 		   
 		   if(ISSET($_SESSION['customer_id'])){
-				   echo '<a style="font-size:1.2em;" href=# onclick="sendreq(\'feature/queue/newQueue.php?product_id='.$product_id.'\');alert(\'Success\');return false;" >Join Queue</a>';
+				   echo '<a style="font-size:1.2em;" href=# onclick="sendreq(\'feature/queue/newQueue.php?product_id='.$product_id.'\');alert(\'Success\');return false;" >Join Queue</a> - '.
+					   '<a style="font-size:1.2em;" href=# onclick="sendreq(\'feature/queue/exitQueue.php?product_id='.$product_id.'\');alert(\'Success\');return false;" >Exit Queue</a>';
 			   }else{
 				  echo '<p style="font-size:1.2em;" ><a href="https://www.productlists.co.za/member/signin_main.php" >Sign In</a></p>';
 			   }
